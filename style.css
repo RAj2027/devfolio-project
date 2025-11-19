@@ -321,6 +321,29 @@ button:hover {
     top: 0.2vw;
 }
 
+
+.topScroll {
+    background-color: aliceblue;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    left: 88vw;
+    transition: transform 0.3s ease-in-out;
+    transform-origin: center center;
+}
+
+.topScroll:hover {
+    transform: scale(1.5);
+}
+
+.ri-arrow-up-line {
+    font-size: 35px;
+    color: var(--s-color);
+}
 /* ----------------END OF PROFILE SECTION------------------ */
 
 /* ----------------START OF FOOTER SECTION-------------------- */
@@ -329,8 +352,7 @@ button:hover {
     width: 100%;
     padding: 2.5vw;
     color: var(--p-color);
-    margin-top: 50px;
-    margin-bottom: 30px;
+    margin-bottom: 4vh;
 }
 
 #footer-content {
