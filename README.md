@@ -8,7 +8,7 @@
 
 **A sleek, interactive developer portfolio featuring smooth animations, custom cursor effects, and a modern UI/UX design.**
 
-[Live Demo](https://your-demo-link.com) • [Report Bug](https://github.com/RAj2027/devfolio/issues) • [Request Feature](https://github.com/RAj2027/devfolio/issues)
+[Live Demo](https://devfolio-peach-two.vercel.app) • [Report Bug](https://github.com/RAj2027/devfolio/issues) • [Request Feature](https://github.com/RAj2027/devfolio/issues)
 
 </div>
 
@@ -571,8 +571,6 @@ in the Software without restriction...
 [![YouTube](https://img.shields.io/badge/YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/@sketchyfunk)
 
 **Project Link**: [https://github.com/RAj2027/devfolio](https://github.com/RAj2027/devfolio)
-
-**Portfolio**: [Your Portfolio URL]
 
 ---
 
