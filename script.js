@@ -1,6 +1,7 @@
 import gsap from 'gsap';
 import LocomotiveScroll from 'locomotive-scroll';
 import 'remixicon/fonts/remixicon.css';
+import { initTextRoll } from './animations/textRoll.js';
 
 console.log("Script loaded successfully");
 
@@ -66,6 +67,9 @@ function cursorSquisher() {
 
 // Initialize cursor functionality
 cursorSquisher();
+
+// Initialize text roll animations
+initTextRoll();
 
 // Fix anchor links when using LocomotiveScroll (smooth scroller uses transforms)
 // Intercept clicks on in-page anchors and use LocomotiveScroll.scrollTo

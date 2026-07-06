@@ -1,0 +1,27 @@
+/* text-roll.css - Styles for the GSAP text roll hover animation */
+
+.text-roll-wrapper {
+    display: inline;
+}
+
+.roll-char {
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    vertical-align: top;
+}
+
+.roll-char-top {
+    display: inline-block;
+    will-change: transform;
+}
+
+.roll-char-bottom {
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    user-select: none;
+    -webkit-user-select: none;
+    will-change: transform;
+}
