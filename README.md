@@ -307,11 +307,11 @@ Each project card (`.projekts`) contains:
 
 ### Prerequisites
 
+- **Node.js** (v18 or higher) and **npm**
 - Modern web browser (Chrome, Firefox, Safari, Edge)
-- Basic understanding of HTML/CSS/JavaScript
 - Text editor or IDE
 
-### Installation
+### Installation & Setup
 
 1. **Clone the repository**
    ```bash
@@ -319,47 +319,45 @@ Each project card (`.projekts`) contains:
    cd devfolio
    ```
 
-2. **Project Structure**
+2. **Install npm dependencies**
+   ```bash
+   npm install
+   ```
+
+3. **Project Structure**
    ```
    devfolio/
-   ├── index.html
-   ├── style.css
-   ├── loco.css
-   ├── script.js
-   └── Assets/
-       ├── ClashDisplay/
-       │   └── ClashDisplay-Regular.woff
-       ├── profile.jpg
-       ├── havoc.png
-       ├── estudy.png
-       ├── moviethingz.png
-       └── yapzone.png
+   ├── Assets/               # Static visual and typographical assets
+   ├── index.html            # Main HTML structure
+   ├── script.js             # Core interactivity and ES module imports
+   ├── style.css             # Global styling and design tokens
+   ├── loco.css              # Locomotive Scroll styles
+   ├── package.json          # npm configuration and dependencies
+   ├── vite.config.js        # Vite build & dev server configuration
+   └── README.md             # Project documentation
    ```
 
-3. **Add your assets**
-   - Place your profile image in `Assets/profile.jpg`
-   - Add project thumbnails to the `Assets/` folder
-   - Ensure font files are in `Assets/ClashDisplay/`
-
-4. **Open in browser**
-   ```bash
-   # Using Python
-   python -m http.server 8000
-   
-   # Using Node.js
-   npx serve
-   
-   # Or simply open index.html in your browser
-   ```
+4. **Development Workflow**
+   - **Start development server** (with Hot Module Replacement / hot reload):
+     ```bash
+     npm run dev
+     ```
+   - **Build for production** (bundles and optimizes static assets into `dist/`):
+     ```bash
+     npm run build
+     ```
+   - **Preview production build** locally:
+     ```bash
+     npm run preview
+     ```
 
 5. **Customize content**
-   - Update personal information in `index.html`
-   - Modify project links and details
-   - Adjust social media URLs
+   - Place your profile image in `Assets/profile.jpg` and update project thumbnails in `Assets/`
+   - Update personal information and project links in `index.html`
 
 ---
 
-## 💻 Technologies Used
+## 💻 Technologies & Tooling Used
 
 ### Core Technologies
 | Technology | Version | Purpose |
@@ -368,22 +366,27 @@ Each project card (`.projekts`) contains:
 | ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=css3&logoColor=white) | 3 | Styling & Layout |
 | ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=javascript&logoColor=black) | ES6+ | Interactivity & Logic |
 
-### Libraries & Frameworks
+### Libraries, Tooling & Frameworks
+
+#### ⚡ Vite v5.4
+- **Purpose**: Modern frontend build tool and local development server
+- **Usage**: Hot Module Replacement (HMR), asset bundling, and production optimization
+- **Method**: Local npm devDependency (`npm run dev` / `npm run build`)
 
 #### 🎬 GSAP (GreenSock Animation Platform) v3.13.0
 - **Purpose**: High-performance animations
 - **Usage**: Image hover effects, transforms, and transitions
-- **CDN**: `https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js`
+- **Method**: npm Package (`import gsap from 'gsap'`)
 
 #### 🚂 Locomotive Scroll v3.5.4
 - **Purpose**: Smooth scrolling experience
 - **Usage**: Container-based smooth scroll with custom scrollbar
-- **CDN**: `https://cdn.jsdelivr.net/npm/locomotive-scroll@3.5.4/dist/locomotive-scroll.min.js`
+- **Method**: npm Package (`import LocomotiveScroll from 'locomotive-scroll'`)
 
 #### 🎨 RemixIcon v4.5.0
 - **Purpose**: Icon library
 - **Usage**: Arrow icons, social media icons
-- **CDN**: `https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css`
+- **Method**: npm Package (`import 'remixicon/fonts/remixicon.css'`)
 
 ### Custom Assets
 - **Font**: Clash Display (Custom Web Font)

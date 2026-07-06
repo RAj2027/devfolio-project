@@ -1,3 +1,7 @@
+import gsap from 'gsap';
+import LocomotiveScroll from 'locomotive-scroll';
+import 'remixicon/fonts/remixicon.css';
+
 console.log("Script loaded successfully");
 
 const scroll = new LocomotiveScroll({
