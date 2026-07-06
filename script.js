@@ -2,6 +2,7 @@ import gsap from 'gsap';
 import LocomotiveScroll from 'locomotive-scroll';
 import 'remixicon/fonts/remixicon.css';
 import { initTextRoll } from './animations/textRoll.js';
+import { initProjectsHover, initProfileHover } from './animations/imageHover.js';
 
 console.log("Script loaded successfully");
 
@@ -107,76 +108,71 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
 
 
 
-//Menu toggle
+// Menu toggle and navigation controls
 const menuToggle = document.querySelector('#menu');
 const menuLinks = document.querySelector('.menu');
 
-function onclickMenu() {
-    menuToggle.style.display = 'none';
+function openMenu() {
+    if (menuLinks && !menuLinks.classList.contains('is-open')) {
+        menuLinks.classList.add('is-open');
+        if (menuToggle) {
+            menuToggle.textContent = 'CLOSE';
+            delete menuToggle.dataset.textRollInit;
+            initTextRoll();
+        }
+    }
 }
+
+function closeMenu() {
+    if (menuLinks && menuLinks.classList.contains('is-open')) {
+        menuLinks.classList.remove('is-open');
+        if (menuToggle) {
+            menuToggle.textContent = 'MENU+';
+            delete menuToggle.dataset.textRollInit;
+            initTextRoll();
+        }
+    }
+}
+
+function toggleMenu() {
+    if (menuLinks && menuLinks.classList.contains('is-open')) {
+        closeMenu();
+    } else {
+        openMenu();
+    }
+}
+
+// Override global onclickMenu to avoid inline attribute conflict
+window.onclickMenu = toggleMenu;
 
 if (menuToggle && menuLinks) {
-    menuToggle.addEventListener('click', () => {
-        menuLinks.classList.toggle('is-open');
+    menuToggle.addEventListener('click', toggleMenu);
+
+    // Close menu when a navigation link is clicked
+    menuLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', closeMenu);
+    });
+
+    // Close menu when Escape key is pressed
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            closeMenu();
+        }
     });
 }
 
 
 
 
-// Image hover effect 
-document.querySelectorAll('.projekts').forEach(projekts => {
-    const img = projekts.querySelector('img');
-    let prevMouseX = 0;
+// Initialize image hover effects (Projects & Profile)
+initProjectsHover((scale) => {
+    cursorHoverScale = scale;
+    updateCursor(lastX, lastY);
+});
 
-    // initialize so GSAP uses percent-based centering
-    gsap.set(img, { xPercent: -50, yPercent: -50, scale: 1 });
-
-    // scale cursor when hovering this project (simple transform)
-    projekts.addEventListener('mouseenter', () => {
-        cursorHoverScale = 2;
-        // immediately apply to current cursor position
-        updateCursor(lastX, lastY);
-    });
-
-    projekts.addEventListener('mouseleave', () => {
-        cursorHoverScale = 1;
-        updateCursor(lastX, lastY);
-    });
-
-    projekts.addEventListener('mouseleave', (e) => {
-        gsap.to(img, {
-            opacity: 0,
-            scale: 1,
-            rotate: 0,
-            duration: 0.6,
-            ease: 'power3.out',
-        });
-    });
-
-    projekts.addEventListener('mousemove', (e) => {
-
-
-        const rect = projekts.getBoundingClientRect();
-        const xRel = e.clientX - rect.left; // x relative to the projekt
-        const yRel = e.clientY - rect.top;  // y relative to the projekt
-
-        const rot_diff = e.clientX - prevMouseX;
-        prevMouseX = e.clientX;
-
-        gsap.to(img, {
-            opacity: 1,
-            x: xRel,
-            y: yRel,
-            scale: 1.03,
-            // slower, subtler rotation and reduced max angle
-            rotate: gsap.utils.clamp(-8, 8, rot_diff * 0.2),
-            // slower follow for a smoother, less snappy feel
-            duration: 0.55,
-            ease: 'power3.out',
-            overwrite: true,
-        });
-    });
+initProfileHover((scale) => {
+    cursorHoverScale = scale;
+    updateCursor(lastX, lastY);
 });
 
 // On load, clear any fragment and ensure the page starts at top
