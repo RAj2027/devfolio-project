@@ -127,7 +127,7 @@ export function initProfileHover(onHoverChange) {
 
     // Create a larger floating version using profile.jpeg specifically for hover preview
     const floatingImg = document.createElement('img');
-    floatingImg.src = './Assets/profile.webp';
+    floatingImg.src = './assets/profile.webp';
     floatingImg.className = 'floating-profile-img';
     floatingImg.alt = 'Floating Profile Pop-up';
     document.body.appendChild(floatingImg);
