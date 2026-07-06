@@ -1,7 +1,7 @@
 @font-face {
     font-family: myfont;
     letter-spacing: 1.5vw;
-    src: url(./Assets/ClashDisplay/ClashDisplay-Regular.woff);
+    src: url(./assets/ClashDisplay/ClashDisplay-Regular.woff);
 }
 
 :root {

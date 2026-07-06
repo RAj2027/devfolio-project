@@ -1,4 +1,5 @@
 import gsap from 'gsap';
+import profileImgUrl from '../assets/images/profile.webp';
 
 /**
  * Reusable helper function for floating image hover animations.
@@ -127,7 +128,7 @@ export function initProfileHover(onHoverChange) {
 
     // Create a larger floating version using profile.jpeg specifically for hover preview
     const floatingImg = document.createElement('img');
-    floatingImg.src = './assets/profile.webp';
+    floatingImg.src = profileImgUrl;
     floatingImg.className = 'floating-profile-img';
     floatingImg.alt = 'Floating Profile Pop-up';
     document.body.appendChild(floatingImg);
