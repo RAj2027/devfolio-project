@@ -1,5 +1,8 @@
 import gsap from 'gsap';
-import profileImgUrl from '../assets/images/profile.webp';
+const profileImgUrl = new URL(
+  "../assets/images/profile.webp",
+  import.meta.url
+).href;
 
 /**
  * Reusable helper function for floating image hover animations.
