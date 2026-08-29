@@ -327,7 +327,7 @@ Each project card (`.projekts`) contains:
 3. **Project Structure**
    ```
    devfolio/
-   ├── Assets/               # Static visual and typographical assets
+   ├── assets/               # Static visual and typographical assets
    ├── index.html            # Main HTML structure
    ├── script.js             # Core interactivity and ES module imports
    ├── style.css             # Global styling and design tokens
@@ -352,7 +352,7 @@ Each project card (`.projekts`) contains:
      ```
 
 5. **Customize content**
-   - Place your profile image in `Assets/profile.jpg` and update project thumbnails in `Assets/`
+   - Place your profile image in `assets/profile.jpg` and update project thumbnails in `assets/`
    - Update personal information and project links in `index.html`
 
 ---
@@ -447,13 +447,13 @@ The project extensively uses viewport units (vw, vh) for responsive scaling:
 ```css
 @font-face {
     font-family: myfont;
-    letter-spacing: 1.5vw;
-    src: url(./Assets/ClashDisplay/ClashDisplay-Regular.woff);
+    src: url('./assets/ClashDisplay/ClashDisplay-Regular.woff2') format('woff2'),
+         url('./assets/ClashDisplay/ClashDisplay-Regular.woff') format('woff');
 }
 ```
 
 **To change fonts:**
-1. Replace font file in `Assets/ClashDisplay/`
+1. Replace font file in `assets/ClashDisplay/`
 2. Update `@font-face` src path
 3. Adjust letter-spacing as needed
 
@@ -462,7 +462,7 @@ The project extensively uses viewport units (vw, vh) for responsive scaling:
 Update project information in `index.html`:
 ```html
 <a href="YOUR_PROJECT_URL" target="_blank" class="projekts">
-    <img src="./Assets/YOUR_IMAGE.png" alt="image">
+    <img src="./assets/YOUR_IMAGE.png" alt="image">
     <div class="project-title">
         <h1>YOUR PROJECT NAME</h1>
     </div>
