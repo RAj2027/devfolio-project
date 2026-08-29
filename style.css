@@ -163,7 +163,7 @@ a {
     gap: 0.5vw;
 }
 
-#arrow {
+.arrow {
     background-color: var(--p-color);
     border-radius: 50px;
     width: 30px;
@@ -172,7 +172,7 @@ a {
     justify-content: center;
 }
 
-#arrow i {
+#down-arrow .arrow i {
     color: var(--s-color);
 }
 
@@ -211,7 +211,7 @@ a {
     pointer-events: none;
 }
 
-#projekts {
+.projekts:last-child {
     border-bottom: 1px solid rgb(156, 156, 156);
 }
 

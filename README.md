@@ -327,14 +327,26 @@ Each project card (`.projekts`) contains:
 3. **Project Structure**
    ```
    devfolio/
-   ├── assets/               # Static visual and typographical assets
-   ├── index.html            # Main HTML structure
-   ├── script.js             # Core interactivity and ES module imports
-   ├── style.css             # Global styling and design tokens
-   ├── loco.css              # Locomotive Scroll styles
-   ├── package.json          # npm configuration and dependencies
-   ├── vite.config.js        # Vite build & dev server configuration
-   └── README.md             # Project documentation
+   ├── assets/
+   │   ├── ClashDisplay/             # Clash Display web-font files  
+   │   └── images/                   # Project and profile images
+   │       ├── havoc.png             # CivicTrack project thumbnail
+   │       ├── estudy.png            # Netflix UI Clone project thumbnail
+   │       ├── moviethingz.png       # ContriSpace project thumbnail
+   │       ├── yapzone.png           # Additional project thumbnail
+   │       ├── me.jpeg               # Profile photo (circular, About section)
+   │       └── profile.webp          # Floating profile hover image
+   ├── animations/
+   │   ├── imageHover.js             # GSAP image hover animation helpers
+   │   └── textRoll.js               # Text roll hover animation
+   ├── index.html                    # Main HTML structure
+   ├── script.js                     # Core interactivity and ES module imports
+   ├── style.css                     # Global styling and design tokens
+   ├── loco.css                      # Locomotive Scroll styles
+   ├── text-roll.css                 # Text roll animation styles
+   ├── package.json                  # npm configuration and dependencies
+   ├── vite.config.js                # Vite build & dev server configuration
+   └── README.md                     # Project documentation
    ```
 
 4. **Development Workflow**
@@ -352,7 +364,7 @@ Each project card (`.projekts`) contains:
      ```
 
 5. **Customize content**
-   - Place your profile image in `assets/profile.jpg` and update project thumbnails in `assets/`
+   - Replace `assets/images/profile.webp` with your own profile photo and update project thumbnails in `assets/images/`
    - Update personal information and project links in `index.html`
 
 ---
@@ -500,7 +512,7 @@ gsap.to(img, {
 #### 🎯 Recommended Improvements
 - [ ] Image lazy loading
 - [ ] Minified CSS/JS files
-- [ ] WebP image format
+- [x] WebP image format (`profile.webp` already served in WebP)
 - [ ] Preload critical assets
 - [ ] Service worker for offline support
 

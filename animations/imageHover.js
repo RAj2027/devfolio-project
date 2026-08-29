@@ -126,7 +126,7 @@ export function initProfileHover(onHoverChange) {
     const originalImg = profilePicContainer.querySelector('img');
     if (!originalImg) return;
 
-    // Create a larger floating version using profile.jpeg specifically for hover preview
+    // Create a larger floating version using profile.webp specifically for hover preview
     const floatingImg = document.createElement('img');
     floatingImg.src = profileImgUrl;
     floatingImg.className = 'floating-profile-img';
